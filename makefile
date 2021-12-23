@@ -26,7 +26,7 @@ bootsect.bin: bootsect.asm
 	nasm $< -f bin -o $@
 
 os-image.bin: bootsect.bin kernel.bin
-	cat $^ > $@
+	type $^ > $@
 
 run: os-image.bin
 	qemu-system-x86_64 -fda $< -L "C:\Program Files\qemu
